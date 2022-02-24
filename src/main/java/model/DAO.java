@@ -109,10 +109,10 @@ public class DAO {
 	
 	//Editar o contato
 	public void alterarContato(JavaBeans contato) {
-		String create = "UPDATE contatos SET nome = ?, fone=?, email=? WHERE idcon=?";
+		String update = "UPDATE contatos SET nome = ?, fone=?, email=? WHERE idcon=?";
 		try {
 			Connection con = conectar();
-			PreparedStatement pst = con.prepareStatement(create);
+			PreparedStatement pst = con.prepareStatement(update);
 			
 			pst.setString(1, contato.getNome());
 			pst.setString(2, contato.getFone());
